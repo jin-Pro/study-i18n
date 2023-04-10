@@ -1,9 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>hi</div>,
+    element: (
+      <>
+        {import.meta.env.DEV && <ReactQueryDevtools />}
+        <div>hi</div>
+      </>
+    ),
     children: [
       {
         path: "/",

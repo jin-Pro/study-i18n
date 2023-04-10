@@ -1,5 +1,5 @@
 {
-  "name": "ts+vite+react",
+  "name": "ts-vite-react-reactquery",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "",
@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
     "react-router-dom": "^6.6.1"
   },
   "devDependencies": {
