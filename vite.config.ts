@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       host: env.VITE_HOST.split('://')[1],
-      port: 80,
+      port: 3000,
     },
     plugins: [
       react(),
