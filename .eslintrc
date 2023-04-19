@@ -1,0 +1,85 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended"
+  ],
+  "plugins": ["eslint-plugin-prettier", "eslint-plugin-jsx-a11y"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "no-promise-executor-return": "off",
+    "react/display-name": "off",
+    "no-return-assign": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "no-continue": "off",
+    "@typescript-eslint/ban-types": "warn",
+    "camelcase": "off",
+    "no-unused-expressions": "off",
+    "no-restricted-syntax": "off",
+    "no-underscore-dangle": "off",
+    "no-use-before-define": "off",
+    "react/no-unused-prop-types": "off",
+    "arrow-body-style": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-param-reassign": "error",
+    "no-unused-vars": "warn",
+    "no-empty-pattern": "error",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "react/function-component-definition": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+
+    "import/prefer-default-export": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", ["parent", "sibling"], "index"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      },
+      "alias": {
+        "map": [
+          ["@pages", "./src/pages"],
+          ["@components", "./src/components"],
+          ["@util", "./src/util"],
+          ["@msw", "./src/_msw"]
+        ],
+        "extensions": [".ts", ".tsx"]
+      }
+    }
+  }
+}
