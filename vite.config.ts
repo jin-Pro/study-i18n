@@ -1,15 +1,36 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import envCompatible from "vite-plugin-env-compatible";
-import path from "path";
+import path from 'path';
 
-export default defineConfig({
-  publicDir: false,
-  resolve: {
-    alias: {
-      "@pages": path.resolve(__dirname, "./src/pages"),
-      "@components": path.resolve(__dirname, "./src/components"),
+import react from '@vitejs/plugin-react';
+import { defineConfig, loadEnv } from 'vite';
+import envCompatible from 'vite-plugin-env-compatible';
+import svgr from 'vite-plugin-svgr';
+
+const _path = (_: string) => path.resolve(__dirname, _);
+
+export default defineConfig(({ mode }) => {
+  const env: Record<string, string> = { ...loadEnv(mode, process.cwd(), '') };
+  return {
+    publicDir: 'public',
+    resolve: {
+      alias: {
+        '@pages': _path('./src/pages'),
+        '@components': _path('./src/components'),
+        '@util': _path('./src/util'),
+        '@msw': _path('./src/_msw'),
+      },
     },
-  },
-  plugins: [react(), envCompatible({ prefix: "REACT_APP" })],
+    server: {
+      host: env.VITE_HOST.split('://')[1],
+      port: 80,
+    },
+    plugins: [
+      react(),
+      envCompatible({ prefix: 'REACT_APP' }),
+      svgr({
+        svgrOptions: {
+          ref: true,
+        },
+      }),
+    ],
+  };
 });

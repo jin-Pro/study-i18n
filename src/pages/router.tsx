@@ -1,18 +1,12 @@
-import { createBrowserRouter } from "react-router-dom";
-import { ReactQueryDevtools } from "react-query/devtools";
+import { createBrowserRouter } from 'react-router-dom';
 
 export const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <>
-        {import.meta.env.DEV && <ReactQueryDevtools />}
-        <div>hi</div>
-      </>
-    ),
+    path: '/',
+    element: <div>hi</div>,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <div>zmzmzmzmzm</div>,
       },
     ],
