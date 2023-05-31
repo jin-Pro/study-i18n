@@ -1,3 +1,3 @@
-export default function c(...strings: string[]) {
-  return strings.join(' ');
+export default function c(...strings: (string | boolean | undefined)[]) {
+  return strings.filter((str) => !!str).join(' ');
 }
