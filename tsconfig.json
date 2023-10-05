@@ -16,12 +16,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "paths": {
-      "@pages/*": ["./src/pages/*"],
-      "@components/*": ["./src/components/*"],
-      "@util/*": ["./src/util/*"],
-      "@msw/*": ["./src/_msw/*"]
-    }
   },
   "include": ["src", "../types"],
   "references": [{ "path": "./tsconfig.node.json" }]

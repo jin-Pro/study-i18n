@@ -12,12 +12,7 @@ export default defineConfig(({ mode }) => {
   return {
     publicDir: 'public',
     resolve: {
-      alias: {
-        '@pages': _path('./src/pages'),
-        '@components': _path('./src/components'),
-        '@util': _path('./src/util'),
-        '@msw': _path('./src/_msw'),
-      },
+      alias: {},
     },
     server: {
       host: env.VITE_HOST.split('://')[1],

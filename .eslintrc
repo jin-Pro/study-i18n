@@ -72,12 +72,7 @@
         "paths": ["src"]
       },
       "alias": {
-        "map": [
-          ["@pages", "./src/pages"],
-          ["@components", "./src/components"],
-          ["@util", "./src/util"],
-          ["@msw", "./src/_msw"]
-        ],
+        "map": [],
         "extensions": [".ts", ".tsx"]
       }
     }
