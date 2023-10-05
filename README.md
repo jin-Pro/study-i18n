@@ -1,2 +1,1 @@
-npx husky install
-npx msw init public/ --save
+i18n apply react
