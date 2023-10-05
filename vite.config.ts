@@ -12,7 +12,9 @@ export default defineConfig(({ mode }) => {
   return {
     publicDir: 'public',
     resolve: {
-      alias: {},
+      alias: {
+        '@i18n': _path('./src/i18n'),
+      },
     },
     server: {
       host: env.VITE_HOST.split('://')[1],

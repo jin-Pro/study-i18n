@@ -72,7 +72,7 @@
         "paths": ["src"]
       },
       "alias": {
-        "map": [],
+        "map": [["@i18n", "./src/i18n"]],
         "extensions": [".ts", ".tsx"]
       }
     }

@@ -16,6 +16,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "paths": {
+      "@i18n/*": ["./src/i18n/*"]
+    }
   },
   "include": ["src", "../types"],
   "references": [{ "path": "./tsconfig.node.json" }]
