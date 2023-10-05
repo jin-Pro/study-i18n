@@ -28,9 +28,13 @@ export const useTranslation = (domain: string) => {
   } = useTranslationHook([domain]);
 
   const navigate = useNavigate();
+
   const changeLang = (lang: LanguageType) => {
+    const [_, __, ...restPathname] = window.location.href
+      .split(window.location.origin)[1]
+      .split('/');
+    navigate(`/${lang}/${restPathname.join('/')}`);
     i18n.changeLanguage(lang);
-    navigate(`/${lang}`);
   };
 
   return {
