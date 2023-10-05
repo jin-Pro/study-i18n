@@ -2,6 +2,7 @@ import { useTranslation } from '@i18n/.';
 
 const MainPage = () => {
   const { t, lang, changeLang } = useTranslation('translate');
+  const { t: t1 } = useTranslation('info');
   return (
     <div
       style={{
@@ -13,6 +14,7 @@ const MainPage = () => {
       }}
     >
       <h2>{t('greet')}</h2>
+      <h2>{t1('name')}</h2>
       <button
         onClick={() => changeLang(lang === 'ko' ? 'en' : 'ko')}
         type='button'
