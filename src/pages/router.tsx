@@ -1,10 +1,27 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { Outlet, createBrowserRouter } from 'react-router-dom';
 
 import MainPage from './MainPage';
+import DefaultRootPath from '../hoc/DefaultRootPath';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainPage />,
+    element: (
+      <DefaultRootPath>
+        <Outlet />
+      </DefaultRootPath>
+    ),
+    children: [
+      {
+        path: '/:root',
+        element: <Outlet />,
+        children: [
+          {
+            path: '',
+            element: <MainPage />,
+          },
+        ],
+      },
+    ],
   },
 ]);
